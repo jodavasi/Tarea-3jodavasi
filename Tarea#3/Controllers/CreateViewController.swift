@@ -32,8 +32,9 @@ class CreateViewController: UITableViewController {
         
     }
     @objc func addNewsAction(sender: UIBarButtonItem){
+        let randomNumber = Int.random(in: 1...5)
         if let title = nameProducto.text, quantityProduct.text!.count > 0, title.count > 0{
-            let newProduct = Product(name: nameProducto.text!, quantity: quantityProduct.text!, imageName: "product1")
+            let newProduct = Product(name: nameProducto.text!, quantity: quantityProduct.text!, imageName: "product"+String(randomNumber))
             delegate?.addNew(product: newProduct)
         }else{
             let alertController = UIAlertController(title: "Error", message: "Debe llenar todos los espacios", preferredStyle: .alert)

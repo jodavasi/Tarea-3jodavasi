@@ -72,11 +72,13 @@ extension FirstView: UITableViewDataSource, UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let viewController = storyboard?.instantiateViewController(identifier: "ProductViewController") as? ProductViewController {
-            viewController.products = products[indexPath.row]
-            navigationController?.pushViewController(viewController, animated: true)
+        if let selection = storyboard?.instantiateViewController(identifier: "ProductViewController") as? ProductViewController {
+            selection.products = products[indexPath.row]
+            navigationController?.pushViewController(selection, animated: true)
         }
     }
+    
+    
     
 }
 
