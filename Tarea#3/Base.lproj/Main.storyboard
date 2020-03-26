@@ -1,24 +1,148 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kfg-bj-tfX">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--First View-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FirstView" id="BYZ-38-t0r" customClass="FirstView" customModule="Tarea_3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="y9W-Ch-Wxt">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="ZWE-PX-fup"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="l6L-yM-J0P"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="y9W-Ch-Wxt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="C07-vC-1lW"/>
+                            <constraint firstItem="y9W-Ch-Wxt" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="DIZ-19-EXv"/>
+                            <constraint firstItem="y9W-Ch-Wxt" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="M75-lo-tYI"/>
+                            <constraint firstAttribute="bottom" secondItem="y9W-Ch-Wxt" secondAttribute="bottom" id="MBV-2v-c1h"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="HFu-ym-xnr"/>
+                    <connections>
+                        <outlet property="tableViewList" destination="y9W-Ch-Wxt" id="4VG-vr-i5z"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1047.8260869565217" y="114.50892857142857"/>
+        </scene>
+        <!--Create View Controller-->
+        <scene sceneID="RCC-Vs-PVC">
+            <objects>
+                <tableViewController storyboardIdentifier="CreateViewController" id="nNt-c5-rr2" customClass="CreateViewController" customModule="Tarea_3" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="KbE-lY-RKa">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <sections>
+                            <tableViewSection id="sdQ-JM-gd8">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="170" id="VPE-Kw-fLt">
+                                        <rect key="frame" x="0.0" y="18" width="414" height="170"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VPE-Kw-fLt" id="Wpn-QA-Mla">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="170"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cantidad:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pox-tk-PTY">
+                                                    <rect key="frame" x="13" y="83" width="74" height="24.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VQM-0G-xdd">
+                                                    <rect key="frame" x="92" y="20" width="302" height="34"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hnE-XT-DcM">
+                                                    <rect key="frame" x="92" y="76" width="302" height="34"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Nombre:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Sl-hz-fe2">
+                                                    <rect key="frame" x="17" y="27" width="67" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstItem="hnE-XT-DcM" firstAttribute="centerY" secondItem="Wpn-QA-Mla" secondAttribute="centerY" constant="8" id="21R-oe-GVP"/>
+                                                <constraint firstItem="Pox-tk-PTY" firstAttribute="leading" secondItem="Wpn-QA-Mla" secondAttribute="leading" constant="13" id="2CP-zn-RX0"/>
+                                                <constraint firstItem="hnE-XT-DcM" firstAttribute="trailing" secondItem="Wpn-QA-Mla" secondAttribute="trailingMargin" id="3aH-gW-ZLh"/>
+                                                <constraint firstAttribute="trailing" secondItem="VQM-0G-xdd" secondAttribute="trailing" constant="20" id="5Ox-UV-9EV"/>
+                                                <constraint firstItem="Pox-tk-PTY" firstAttribute="centerX" secondItem="Wpn-QA-Mla" secondAttribute="centerX" constant="-157" id="ELi-hU-pUc"/>
+                                                <constraint firstItem="VQM-0G-xdd" firstAttribute="leading" secondItem="2Sl-hz-fe2" secondAttribute="trailing" constant="8" id="H0e-h4-cdq"/>
+                                                <constraint firstAttribute="bottom" secondItem="Pox-tk-PTY" secondAttribute="bottom" constant="62.5" id="IyC-3q-veP"/>
+                                                <constraint firstItem="hnE-XT-DcM" firstAttribute="leading" secondItem="Pox-tk-PTY" secondAttribute="trailing" constant="5" id="JL2-RG-DCE"/>
+                                                <constraint firstItem="VQM-0G-xdd" firstAttribute="top" secondItem="Wpn-QA-Mla" secondAttribute="top" constant="20" symbolic="YES" id="TCv-9d-KyM"/>
+                                                <constraint firstItem="2Sl-hz-fe2" firstAttribute="centerX" secondItem="Wpn-QA-Mla" secondAttribute="centerX" constant="-156.5" id="Xva-wg-UDr"/>
+                                                <constraint firstItem="2Sl-hz-fe2" firstAttribute="centerY" secondItem="Wpn-QA-Mla" secondAttribute="centerY" constant="-47.75" id="YgI-uo-dsd"/>
+                                                <constraint firstItem="Pox-tk-PTY" firstAttribute="centerY" secondItem="Wpn-QA-Mla" secondAttribute="centerY" constant="10.25" id="ca6-ow-8GY"/>
+                                                <constraint firstItem="hnE-XT-DcM" firstAttribute="centerX" secondItem="Wpn-QA-Mla" secondAttribute="centerX" constant="36" id="iL1-Si-L7t"/>
+                                                <constraint firstItem="2Sl-hz-fe2" firstAttribute="top" secondItem="Wpn-QA-Mla" secondAttribute="top" constant="27" id="l7O-gy-x3U"/>
+                                                <constraint firstItem="Pox-tk-PTY" firstAttribute="top" secondItem="2Sl-hz-fe2" secondAttribute="bottom" constant="35.5" id="lpd-k9-xoa"/>
+                                                <constraint firstItem="Pox-tk-PTY" firstAttribute="top" secondItem="2Sl-hz-fe2" secondAttribute="bottom" constant="35.5" id="q1j-Lh-9N4"/>
+                                                <constraint firstItem="hnE-XT-DcM" firstAttribute="top" secondItem="VQM-0G-xdd" secondAttribute="bottom" constant="22" id="uAP-Sz-MO0"/>
+                                                <constraint firstItem="2Sl-hz-fe2" firstAttribute="leading" secondItem="Wpn-QA-Mla" secondAttribute="leading" constant="17" id="uX7-Dh-xWT"/>
+                                                <constraint firstItem="VQM-0G-xdd" firstAttribute="centerY" secondItem="Wpn-QA-Mla" secondAttribute="centerY" constant="-48" id="x4Y-qk-G1i"/>
+                                                <constraint firstItem="VQM-0G-xdd" firstAttribute="centerX" secondItem="Wpn-QA-Mla" secondAttribute="centerX" constant="36" id="zob-bt-8kI"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="nNt-c5-rr2" id="Ed6-3A-2Al"/>
+                            <outlet property="delegate" destination="nNt-c5-rr2" id="WbH-R1-rid"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <outlet property="nameProducto" destination="VQM-0G-xdd" id="Kpo-Mg-W1K"/>
+                        <outlet property="quantityProduct" destination="hnE-XT-DcM" id="hSL-ga-c2P"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l4N-PW-4YW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1844.9275362318842" y="-575.22321428571422"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ydK-BR-0Ol">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kfg-bj-tfX" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="IXA-Zb-vja">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="B9B-dJ-LqR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kQh-sg-tqy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="114.50892857142857"/>
         </scene>
     </scenes>
 </document>
